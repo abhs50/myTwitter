@@ -23,7 +23,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     TweetListViewController *viewController = [[TweetListViewController alloc] initWithNibName:@"TweetListViewController" bundle:nil];
-    LoginViewController *loginViewController = [[ LoginViewController alloc] init];
+    LoginViewController *loginViewController = [[ LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+    
+    self.tabBarController.viewControllers = [NSArray arrayWithObjects:viewController, loginViewController,nil];
+
     
     
     CGRect frame = [UIScreen mainScreen].bounds;
@@ -31,6 +34,7 @@
     
     // Root Screen
     self.window.rootViewController = loginViewController;
+    //self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     
     return YES;

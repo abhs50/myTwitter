@@ -10,11 +10,6 @@
 #import "User.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
 
-#define TIMESTAMP_LABEL_HOUR_TEXT LocalizedString(@"%@h")
-#define TIMESTAMP_LABEL_MINUTE_TEXT LocalizedString(@"%@m")
-#define TIMESTAMP_LABEL_SECOND_TEXT LocalizedString(@"%@s")
-
-
 @interface  TweetTableViewCell ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
@@ -35,7 +30,6 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.timestampLabel.text = @"4h";
 }
 
 
@@ -49,10 +43,18 @@
     Tweet *tweet = self.tweet;
     self.nameLabel.text = tweet.user.name;
     self.contentLabel.text = tweet.text;
-    self.handleLabel.text = tweet.user.screenName;
+    self.handleLabel.text = [@"@" stringByAppendingString:tweet.user.screenName];
     NSURL *url = [NSURL URLWithString:tweet.user.profileImageUrl];
     [self.profileImageView setImageWithURL:url];
-    //self.timestampLabel = tweet.createdAt;
+    
+    //format date
+    NSDateComponentsFormatter *formatter = [[NSDateComponentsFormatter alloc] init];
+    formatter.unitsStyle = NSDateComponentsFormatterUnitsStyleAbbreviated;
+    formatter.allowedUnits = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
+    formatter.maximumUnitCount = 1;
+    NSString *elapsed = [formatter stringFromDate:tweet.createdAt toDate:[NSDate date]];
+    
+    self.timestampLabel.text = elapsed;
 }
 
 

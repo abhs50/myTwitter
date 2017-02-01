@@ -52,11 +52,14 @@
    
     TweetTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TweetTableViewCell" forIndexPath:indexPath];
     cell.tweet = self.tweets[indexPath.row];
-    
    // cell.delegate = self;
     //[cell setNeedsUpdateConstraints];
     return cell;
     
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 -(void) getLatestTweets {

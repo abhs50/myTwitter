@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="554" height="307"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="554" height="307"/>
+                <rect key="frame" x="0.0" y="0.0" width="554" height="306.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5sG-WC-Owx" userLabel="Top Container">
@@ -95,17 +95,17 @@
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5ah-ym-GQc" userLabel="Button Container">
                         <rect key="frame" x="68" y="266.66666666666669" width="486" height="40"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lML-l8-Uh1">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lML-l8-Uh1">
                                 <rect key="frame" x="0.0" y="0.0" width="162" height="40"/>
-                                <state key="normal" title="Reply"/>
+                                <state key="normal" title="Reply" image="reply.png"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7JS-te-5vR">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7JS-te-5vR">
                                 <rect key="frame" x="162" y="0.0" width="162" height="40"/>
-                                <state key="normal" title="Retweet"/>
+                                <state key="normal" title="Retweet" image="retweet.png"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSe-I4-O5A">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSe-I4-O5A">
                                 <rect key="frame" x="324" y="0.0" width="162" height="40"/>
-                                <state key="normal" title="Favorite"/>
+                                <state key="normal" title="Favorite" image="favorite.png"/>
                             </button>
                         </subviews>
                         <constraints>
@@ -142,4 +142,9 @@
             <point key="canvasLocation" x="181" y="185.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="favorite.png" width="16" height="16"/>
+        <image name="reply.png" width="16" height="16"/>
+        <image name="retweet.png" width="16" height="16"/>
+    </resources>
 </document>
