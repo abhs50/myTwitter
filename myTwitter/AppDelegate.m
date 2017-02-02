@@ -24,8 +24,8 @@
     
     TweetListViewController *viewController = [[TweetListViewController alloc] initWithNibName:@"TweetListViewController" bundle:nil];
     LoginViewController *loginViewController = [[ LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-    
-    self.tabBarController.viewControllers = [NSArray arrayWithObjects:viewController, loginViewController,nil];
+    self.navController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
+
 
     
     
@@ -33,7 +33,8 @@
     self.window = [[UIWindow alloc] initWithFrame:frame];
     
     // Root Screen
-    self.window.rootViewController = loginViewController;
+    self.window.rootViewController = self.navController;
+    //self.window.rootViewController = loginViewController;
     //self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     

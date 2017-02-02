@@ -1,31 +1,22 @@
 //
-//  TabControllerViewController.m
+//  TweetViewController.m
 //  myTwitter
 //
-//  Created by Abhinav Wagle on 1/31/17.
+//  Created by Abhinav Wagle on 2/1/17.
 //  Copyright © 2017 Abhinav. All rights reserved.
 //
 
-#import "TabControllerViewController.h"
-#import "TweetListViewController.h"
+#import "TweetViewController.h"
 
-@interface TabControllerViewController ()
+@interface TweetViewController ()
 
 @end
 
-@implementation TabControllerViewController
+@implementation TweetViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    TweetListViewController *tweetListViewController = (TweetListViewController *)[[self viewControllers] objectAtIndex:0];
-    [self refreshTitleText];
-    
-}
-
-- (void)refreshTitleText {
-    
-    [[self.tabBar.items objectAtIndex:0] setTitle:@"Home Feed"];
-    [[self.tabBar.items objectAtIndex:1] setTitle:@"Timeline"];
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {

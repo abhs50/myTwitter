@@ -14,12 +14,13 @@
 @property (nonatomic, strong) NSString *text;
 @property (nonatomic, strong) NSDate *createdAt;
 @property (nonatomic, strong) User *user;
+@property (nonatomic, strong) NSNumber *retweetCount;
+@property (nonatomic, strong) NSNumber *favoriteCount;
+@property (nonatomic, strong) NSNumber *tweetId;
 
 -(id) initWithDictionary:(NSDictionary *) dictionary;
 
 + (NSArray *) tweetsWithArray:(NSArray *)array;
-
-
 // Helper function
 
 

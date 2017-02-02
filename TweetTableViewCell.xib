@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="554" height="307"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="554" height="306.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="554" height="307"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5sG-WC-Owx" userLabel="Top Container">
@@ -98,14 +98,23 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lML-l8-Uh1">
                                 <rect key="frame" x="0.0" y="0.0" width="162" height="40"/>
                                 <state key="normal" title="Reply" image="reply.png"/>
+                                <connections>
+                                    <action selector="onReplyPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="yrR-Cm-dQs"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7JS-te-5vR">
                                 <rect key="frame" x="162" y="0.0" width="162" height="40"/>
                                 <state key="normal" title="Retweet" image="retweet.png"/>
+                                <connections>
+                                    <action selector="onRetweetPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="AFV-A1-XJY"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSe-I4-O5A">
                                 <rect key="frame" x="324" y="0.0" width="162" height="40"/>
                                 <state key="normal" title="Favorite" image="favorite.png"/>
+                                <connections>
+                                    <action selector="onFavoritePressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="fAB-6b-sar"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>

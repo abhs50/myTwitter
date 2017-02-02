@@ -18,5 +18,7 @@
 -(void) loginWithCompletion:(void (^)(User *user, NSError *error)) completion;
 -(void) openURL:(NSURL *) url;
 -(void) getHomeTimeLine:(void (^)(NSArray *tweets, NSError *error)) completion;
+-(void) pushRetweet:(NSDictionary *)requestParams;
+-(void) pushFavorite:(NSDictionary *)requestParams;
 
 @end

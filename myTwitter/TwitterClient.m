@@ -13,6 +13,8 @@ NSString *const kTwitterConsumerKey = @"jrQe6akJqQQDMg442rKZeIY4q";
 NSString *const kTwitterConsumerSecret = @"K487s2tLGz7hIUU6IEI3KogYAOkwafI90n6f21Y5DLlb1X0WGE";
 NSString *const KTwitterBaseUrl = @"https://api.twitter.com";
 NSString *const kTwitterHomeTimeLine = @"1.1/statuses/home_timeline.json";
+NSString * const retweetApiUrl = @"1.1/statuses/retweet/%@.json";
+NSString * const tweetFavoriteApiUrl = @"1.1/favorites/create.json";
 
 
 @interface TwitterClient()
@@ -90,5 +92,34 @@ NSString *const kTwitterHomeTimeLine = @"1.1/statuses/home_timeline.json";
      }];
     
 }
+
+
+-(void) pushRetweet:(NSDictionary *)requestParams {
+    
+    NSString *retweetApiEndPoint = [NSString stringWithFormat:retweetApiUrl, requestParams[@"id"]];
+    
+    [[TwitterClient sharedInstance] POST:retweetApiEndPoint parameters:requestParams success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSLog(@"Pushed Retweet Successfully");
+    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        NSLog(@"Failed to retweet %@", error);
+        
+    }];
+    
+    
+}
+
+-(void) pushFavorite:(NSDictionary *)requestParams {
+    
+    [[TwitterClient sharedInstance] POST:tweetFavoriteApiUrl parameters:requestParams success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSLog(@"Pushed Favorite Successfully");
+    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        NSLog(@"Failed to retweet %@", error);
+        
+    }];
+    
+    
+}
+
+
 
 @end
