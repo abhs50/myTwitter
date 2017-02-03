@@ -1,5 +1,6 @@
 # myTwitter
-myTwitter Application 
+
+myTwitter Ios Application using Twitter Api's
 
 - Login using Oauth
 - HomeTime Line
