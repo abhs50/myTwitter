@@ -32,8 +32,10 @@
             NSLog(@"User not found %@", error);
         }
     }];
-    self.tweetTextView.editable = YES;
-    self.tweetTextView.selectedRange = NSMakeRange(2,0);
+    
+    [self.tweetTextView setDelegate:self];
+    self.tweetTextView.text = @"What's happening?";
+    self.tweetTextView.textColor = [UIColor lightGrayColor];
     
 }
 
@@ -52,22 +54,29 @@
     [[TwitterClient sharedInstance] postTweet:requestParams];
     [self.navigationController popViewControllerAnimated:YES];
     
+}
 
+- (void)textViewDidBeginEditing:(UITextView *)textView
+{
+    if ([textView.text isEqualToString:@"What's happening?"]) {
+        textView.text = @"";
+        textView.textColor = [UIColor blackColor]; //optional
+    }
+    [textView becomeFirstResponder];
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView
+{
+    if ([textView.text isEqualToString:@""]) {
+        textView.text = @"What's happening?.";
+        textView.textColor = [UIColor lightGrayColor]; //optional
+    }
+    [textView resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

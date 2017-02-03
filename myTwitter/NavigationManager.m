@@ -68,9 +68,6 @@
     TweetListViewController *viewController = [[TweetListViewController alloc] initWithNibName:@"TweetListViewController" bundle:nil];
     ProfilePageViewController *profileViewController = [[ProfilePageViewController alloc] initWithNibName:@"ProfilePageViewController" bundle:nil];
     
-    
-    //viewController.title = @"Logged In";
-    
     // create tab item
     UIImage *homeImg = [UIImage imageNamed:@"home.png"];
     UIImage *profileImg = [UIImage imageNamed:@"profile.png"];
