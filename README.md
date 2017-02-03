@@ -11,5 +11,8 @@ myTwitter Ios Application using Twitter Api's
 - User can compose a new tweet by tapping on a compose button.
 - User can tap on a tweet to view it, with controls to retweet, favorite, and reply.
 - UITabBarController  : HomeTimeLine View, Profile View
+- Navigation Controller Singelton 
 
 Check out Gif here : https://github.com/abhs50/myTwitter/blob/master/twitter.gif
+
+Happy Coding !
