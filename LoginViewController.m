@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "TwitterClient.h"
 #import "TweetListViewController.h"
+#import "NavigationManager.h"
 
 @interface LoginViewController ()
 
@@ -27,9 +28,12 @@
     [[TwitterClient sharedInstance] loginWithCompletion:^(User *user, NSError *error) {
         if(user !=nil) {
             // Present Tweets view
-            NSLog(@"Scree Name %@", user.screenName);
-            TweetListViewController *viewController = [[TweetListViewController alloc] initWithNibName:@"TweetListViewController" bundle:nil];
-         //   UINavigationController *navController = (UINavigationController *)[UIApplication.sharedApplication.keyWindow rootViewController];
+            NSLog(@"Screen Name %@", user.screenName);
+            NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults]; //  From here
+            [prefs setObject:user.name forKey:@"user"];
+            [prefs synchronize];
+            NSLog(@" User Data saved");
+            [[NavigationManager shared] logIn];
         } else {
             NSLog(@"User not found %@", error);
         }

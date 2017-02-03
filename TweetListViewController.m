@@ -13,6 +13,7 @@
 #import "Tweet.h"
 #import "DetailTweetViewController.h"
 #import "ComposeViewController.h"
+#import "NavigationManager.h"
 
 @interface TweetListViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -118,7 +119,7 @@
 {
     NSLog(@"Signing out %@", btn.title);
     [self.navigationController popViewControllerAnimated:YES];
-    
+    [[NavigationManager shared] logOut];
 }
      
 

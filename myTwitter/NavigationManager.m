@@ -10,6 +10,7 @@
 #import "TweetListViewController.h"
 #import "ProfilePageViewController.h"
 #import "LoginViewController.h"
+#import "User.h"
 
 @interface NavigationManager ()
 
@@ -35,10 +36,18 @@
 {
     self = [super init];
     if (self) {
-        self.isLoggedIn = NO;
-        //UIViewController *root = self.isLoggedIn ? [self loggedInVC] : nil;
-        UIViewController *root = [self loggedInVC];
         
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        User *user = [defaults objectForKey:@"user"];
+        
+        if(user == nil) {
+            self.isLoggedIn = NO;
+        } else {
+            self.isLoggedIn = YES;
+        }
+        
+        UIViewController *root = self.isLoggedIn ? [self loggedInVC] : [self loggedOutVC];
+        //UIViewController *root = [self loggedInVC];
         self.navigationController = [[UINavigationController alloc] init];
         self.navigationController.viewControllers = @[root];
         [self.navigationController setNavigationBarHidden:YES];
@@ -94,14 +103,12 @@
     return tabController;
 }
 
-/*
+
 - (UIViewController *)loggedOutVC
 {
-    LoggedOutViewController *vc = [[LoggedOutViewController alloc] initWithNibName:@"LoggedOutViewController" bundle:nil];
-    
+    LoginViewController *vc = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
     return vc;
-}*/
-
+}
 
 - (void)logIn
 {
@@ -111,11 +118,12 @@
     [self.navigationController setViewControllers:vcs];
 }
 
-/*
+
 - (void)logOut
 {
     self.isLoggedIn = NO;
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"user"];
     self.navigationController.viewControllers = @[[self loggedOutVC]];
-}*/
+}
 
 @end

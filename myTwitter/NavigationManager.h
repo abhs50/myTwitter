@@ -16,6 +16,6 @@
 - (UIViewController *)rootViewController;
 
 - (void)logIn;
-//- (void)logOut;
+- (void)logOut;
 
 @end

@@ -25,6 +25,7 @@
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="n4q-L2-ACf">
                     <rect key="frame" x="0.0" y="186" width="375" height="70"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <accessibility key="accessibilityConfiguration" hint="Whats Happening ?"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="70" id="cF3-bs-d6s"/>
                     </constraints>
@@ -49,7 +50,7 @@
                         <constraint firstItem="Ac9-we-JQP" firstAttribute="top" secondItem="1RY-LR-YJw" secondAttribute="top" id="rmb-aA-FzU"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wG3-hP-Iza" userLabel="Tweet">
+                <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wG3-hP-Iza" userLabel="Tweet">
                     <rect key="frame" x="299" y="266" width="60" height="35"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="60" id="AxP-BX-RZD"/>
@@ -57,6 +58,7 @@
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                     <state key="normal" title="Tweet">
                         <color key="titleColor" red="0.25645254629999997" green="0.75541087959999997" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     </state>
                     <connections>
                         <action selector="postTweet:" destination="-1" eventType="touchUpInside" id="cWx-A2-1gs"/>
