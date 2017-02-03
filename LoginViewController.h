@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginViewController : UIViewController {
-    UINavigationController *refNavigationController;
-}
-
-- (void) setReferencedNavigation:(UINavigationController *)refNavCon;
+@interface LoginViewController : UIViewController
 
 @end

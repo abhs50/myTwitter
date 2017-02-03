@@ -12,6 +12,7 @@
 #import "TwitterClient.h"
 #import "User.h"
 #import "Tweet.h"
+#import "NavigationManager.h"
 
 @interface AppDelegate ()
 
@@ -22,21 +23,43 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.rootViewController = [[NavigationManager shared] rootViewController];
+    [self.window makeKeyAndVisible];
+    
+    //LoginViewController *vc = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+    //self.window.rootViewController = vc;
+    //[self.window makeKeyAndVisible];
+    /*
+    // Add to Array
+    NSMutableArray *localViewControllersArray = [[NSMutableArray alloc] initWithCapacity:3];
+    
+    // Create Home Feed
     TweetListViewController *viewController = [[TweetListViewController alloc] initWithNibName:@"TweetListViewController" bundle:nil];
+    viewController.tabBarItem.title = @"Home Feed";
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    [localViewControllersArray addObject:navController];
+
+    
+    // Create Login
     LoginViewController *loginViewController = [[ LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-    self.navController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
+    [localViewControllersArray addObject:loginViewController];
 
-
+    
+    // Create Tab Bar
+    UITabBarController *tabBars = [[UITabBarController alloc] init];
+    tabBars.viewControllers = localViewControllersArray;
+    tabBars.view.autoresizingMask=(UIViewAutoresizingFlexibleHeight);
     
     
     CGRect frame = [UIScreen mainScreen].bounds;
     self.window = [[UIWindow alloc] initWithFrame:frame];
     
     // Root Screen
-    self.window.rootViewController = self.navController;
+    //self.window.rootViewController = self.navController;
     //self.window.rootViewController = loginViewController;
-    //self.window.rootViewController = self.tabBarController;
-    [self.window makeKeyAndVisible];
+    self.window.rootViewController = tabBars;
+    [self.window makeKeyAndVisible];*/
     
     return YES;
 }

@@ -19,7 +19,7 @@
 @property (strong, nonatomic) MBProgressHUD *loadingIndicator;
 
 
--(void) getLatestTweets;
+- (void) getLatestTweets;
 
 @end
 
@@ -27,6 +27,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIImage *homeImg = [UIImage imageNamed:@"compose.png"];
+    UIBarButtonItem *composeButton = [[UIBarButtonItem alloc] initWithTitle:@"Compose" style:UIBarButtonItemStylePlain target:self action:@selector(createTweet:)];
+    [composeButton setImage:homeImg];
+    
+    [self.navigationItem setRightBarButtonItem:composeButton];
+    
     UINib *nib = [UINib nibWithNibName:@"TweetTableViewCell" bundle:nil];
     
     [self.tableView registerNib:nib forCellReuseIdentifier:@"TweetTableViewCell"];
@@ -67,8 +73,10 @@
     DetailTweetViewController *detailView = [[DetailTweetViewController alloc] initWithNibName:@"DetailTweetViewController" bundle:nil];
     Tweet *tweetModel = self.tweets[indexPath.row];
     detailView.tweet = tweetModel;
-    UINavigationController *navController = (UINavigationController *)[UIApplication.sharedApplication.keyWindow rootViewController];
-    [navController pushViewController:detailView animated:NO];
+    [self.navigationController pushViewController:detailView animated:YES];
+    
+   // UINavigationController *navController = (UINavigationController *)[UIApplication.sharedApplication.keyWindow rootViewController];
+    //[navController pushViewController:detailView animated:NO];
 }
 
 -(void) getLatestTweets {
@@ -84,6 +92,18 @@
         [self.refreshTweetsControl endRefreshing];
     }];
 }
+     
+-(void) createTweet {
+
+    NSLog(@"Calling Create Tweet Method");
+}
+
+-(IBAction)createTweet:(UIBarButtonItem*)btn
+{
+    NSLog(@"Composing tweet %@", btn.title);
+    
+}
+     
 
 - (void) setReferencedNavigation:(UINavigationController *)refNavCon {
     refNavigationController = refNavCon;

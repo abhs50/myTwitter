@@ -14,6 +14,8 @@
 @property (nonatomic, strong) NSString *screenName;
 @property (nonatomic, strong) NSString *profileImageUrl;
 @property (nonatomic, strong) NSString *tagLine;
+@property (nonatomic, strong) NSNumber *followersCount;
+@property (nonatomic, strong) NSNumber *followingCount;
 
 -(id) initWithDictionary:(NSDictionary *) dictionary;
 

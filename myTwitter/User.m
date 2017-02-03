@@ -17,6 +17,8 @@
         self.screenName = dictionary[@"screen_name"];
         self.profileImageUrl = dictionary[@"profile_image_url"];
         self.tagLine = dictionary[@"description"];
+        self.followersCount = dictionary[@"followers_count"];
+        self.followingCount = dictionary[@"friends_count"];
     }
     return self;
 }

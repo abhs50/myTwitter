@@ -8,6 +8,7 @@
 
 #import "TwitterClient.h"
 
+#define SCREEN_NAME "screen_name=abhs50"
 
 NSString *const kTwitterConsumerKey = @"jrQe6akJqQQDMg442rKZeIY4q";
 NSString *const kTwitterConsumerSecret = @"K487s2tLGz7hIUU6IEI3KogYAOkwafI90n6f21Y5DLlb1X0WGE";
@@ -15,6 +16,7 @@ NSString *const KTwitterBaseUrl = @"https://api.twitter.com";
 NSString *const kTwitterHomeTimeLine = @"1.1/statuses/home_timeline.json";
 NSString * const retweetApiUrl = @"1.1/statuses/retweet/%@.json";
 NSString * const tweetFavoriteApiUrl = @"1.1/favorites/create.json";
+NSString * const twitterProfileViewApi = @"1.1/users/show.json?screen_name=abhs50";
 
 
 @interface TwitterClient()
@@ -81,13 +83,11 @@ NSString * const tweetFavoriteApiUrl = @"1.1/favorites/create.json";
     
     //Check my Tweets
      [[TwitterClient sharedInstance] GET:kTwitterHomeTimeLine parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-         //NSLog(@"Tweets %@", responseObject);
-         //NSArray *tweets = [Tweet tweetsWithArray:responseObject];
          NSArray *tweets = [Tweet tweetsWithArray:responseObject];
          //NSLog(@"My Tweets : %@ ", tweets);
          completion(tweets, nil);
      } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
-         NSLog(@"Fail to get current Tweets");
+         NSLog(@"Fail to get current Tweets %@", error);
          completion(nil,error);
      }];
     
@@ -116,10 +116,20 @@ NSString * const tweetFavoriteApiUrl = @"1.1/favorites/create.json";
         NSLog(@"Failed to retweet %@", error);
         
     }];
-    
-    
 }
 
 
+-(void) getProfileView:(void (^)(User *user, NSError *error)) completion {
+    
+    [[TwitterClient sharedInstance] GET:twitterProfileViewApi parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+       User *user = [[User alloc] initWithDictionary:responseObject];
+        NSLog(@" User Object %@", responseObject);
+        completion(user, nil);
+    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        NSLog(@"Fail to get current User");
+        completion(nil,error);
+    }];
+
+}
 
 @end

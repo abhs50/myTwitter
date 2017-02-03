@@ -29,8 +29,7 @@
             // Present Tweets view
             NSLog(@"Scree Name %@", user.screenName);
             TweetListViewController *viewController = [[TweetListViewController alloc] initWithNibName:@"TweetListViewController" bundle:nil];
-            UINavigationController *navController = (UINavigationController *)[UIApplication.sharedApplication.keyWindow rootViewController];
-            [navController pushViewController:viewController animated:NO];
+         //   UINavigationController *navController = (UINavigationController *)[UIApplication.sharedApplication.keyWindow rootViewController];
         } else {
             NSLog(@"User not found %@", error);
         }
@@ -38,9 +37,6 @@
     
 }
 
-- (void) setReferencedNavigation:(UINavigationController *)refNavCon {
-    refNavigationController = refNavCon;
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

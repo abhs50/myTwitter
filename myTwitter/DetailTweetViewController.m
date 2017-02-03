@@ -43,11 +43,6 @@
     NSURL *url = [NSURL URLWithString:self.tweet.user.profileImageUrl];
     [self.profileImageView setImageWithURL:url];
     
-    //UINavigationController *navController = (UINavigationController *)[UIApplication.sharedApplication.keyWindow rootViewController];
-   // TweetViewController *tweetView = [[TweetViewController alloc] initWithNibName:@"TweetViewController" bundle:nil];
-   // [navController addChildViewController:tweetView];
-
-    
 }
 - (IBAction)onReplyPressed:(id)sender {
 
