@@ -5,3 +5,8 @@ myTwitter Application
 - HomeTime Line
 - Profile Page with Stats
 - Compose Tweet and Post to Twitter
+- User can sign in using OAuth login flow
+- User can view last 20 tweets from their home timeline
+- User can compose a new tweet by tapping on a compose button.
+- User can tap on a tweet to view it, with controls to retweet, favorite, and reply.
+- UITabBarController  : HomeTimeLine View, Profile View
