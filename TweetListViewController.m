@@ -36,7 +36,7 @@
     [composeButton setImage:homeImg];
     
     UIBarButtonItem *signOutButton = [[UIBarButtonItem alloc] initWithTitle:@"Sign out" style:UIBarButtonItemStylePlain target:self action:@selector(signOut:)];
-    [composeButton setImage:signoutImg];
+    [signOutButton setImage:signoutImg];
     
     
     [self.navigationItem setRightBarButtonItem:composeButton];
