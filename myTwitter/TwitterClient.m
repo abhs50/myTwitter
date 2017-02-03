@@ -17,6 +17,7 @@ NSString *const kTwitterHomeTimeLine = @"1.1/statuses/home_timeline.json";
 NSString * const retweetApiUrl = @"1.1/statuses/retweet/%@.json";
 NSString * const tweetFavoriteApiUrl = @"1.1/favorites/create.json";
 NSString * const twitterProfileViewApi = @"1.1/users/show.json?screen_name=abhs50";
+NSString * const twitterPostApiUrl = @"1.1/statuses/update.json";
 
 
 @interface TwitterClient()
@@ -130,6 +131,16 @@ NSString * const twitterProfileViewApi = @"1.1/users/show.json?screen_name=abhs5
         completion(nil,error);
     }];
 
+}
+
+-(void) postTweet:(NSDictionary *)requestParams {
+    
+    [[TwitterClient sharedInstance] POST:twitterPostApiUrl parameters:requestParams success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSLog(@"Posted Tweet Successfully");
+    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        NSLog(@"Failure to post tweet %@", error);
+        
+    }];
 }
 
 @end

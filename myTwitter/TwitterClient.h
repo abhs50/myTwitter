@@ -20,6 +20,7 @@
 -(void) getHomeTimeLine:(void (^)(NSArray *tweets, NSError *error)) completion;
 -(void) pushRetweet:(NSDictionary *)requestParams;
 -(void) pushFavorite:(NSDictionary *)requestParams;
--(void) getProfileView:(void (^)(User *user, NSError *error)) completion;;
+-(void) getProfileView:(void (^)(User *user, NSError *error)) completion;
+-(void) postTweet:(NSDictionary *)requestParams;
 
 @end

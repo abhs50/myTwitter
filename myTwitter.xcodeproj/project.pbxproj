@@ -34,6 +34,11 @@
 		7918D9A81E4404000004D87C /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 7918D9A71E4404000004D87C /* profile.png */; };
 		7918D9AA1E4404070004D87C /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 7918D9A91E4404070004D87C /* home.png */; };
 		7918D9AC1E4440610004D87C /* compose.png in Resources */ = {isa = PBXBuildFile; fileRef = 7918D9AB1E4440610004D87C /* compose.png */; };
+		7918D9B01E4441910004D87C /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7918D9AE1E4441910004D87C /* ComposeViewController.m */; };
+		7918D9B11E4441910004D87C /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7918D9AF1E4441910004D87C /* ComposeViewController.xib */; };
+		7918D9B31E444CA10004D87C /* tweet_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 7918D9B21E444CA00004D87C /* tweet_btn.png */; };
+		7918D9B71E4451610004D87C /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 7918D9B61E4451610004D87C /* close.png */; };
+		7918D9B91E4464B80004D87C /* signout.png in Resources */ = {isa = PBXBuildFile; fileRef = 7918D9B81E4464B80004D87C /* signout.png */; };
 		C43156498D30F283CF87DCDA /* libPods-myTwitter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE645D2C2DD77E30C9522D75 /* libPods-myTwitter.a */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +83,12 @@
 		7918D9A71E4404000004D87C /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
 		7918D9A91E4404070004D87C /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 		7918D9AB1E4440610004D87C /* compose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compose.png; sourceTree = "<group>"; };
+		7918D9AD1E4441910004D87C /* ComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
+		7918D9AE1E4441910004D87C /* ComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
+		7918D9AF1E4441910004D87C /* ComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComposeViewController.xib; sourceTree = "<group>"; };
+		7918D9B21E444CA00004D87C /* tweet_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tweet_btn.png; sourceTree = "<group>"; };
+		7918D9B61E4451610004D87C /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		7918D9B81E4464B80004D87C /* signout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signout.png; sourceTree = "<group>"; };
 		AB22A544D04BE8893C37F62B /* Pods-myTwitter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myTwitter.release.xcconfig"; path = "Pods/Target Support Files/Pods-myTwitter/Pods-myTwitter.release.xcconfig"; sourceTree = "<group>"; };
 		C5C0A5377575ED3952371CEA /* Pods-myTwitter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myTwitter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-myTwitter/Pods-myTwitter.debug.xcconfig"; sourceTree = "<group>"; };
 		EE645D2C2DD77E30C9522D75 /* libPods-myTwitter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-myTwitter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,7 +144,10 @@
 		7918D9431E3FB9160004D87C /* myTwitter */ = {
 			isa = PBXGroup;
 			children = (
+				7918D9B81E4464B80004D87C /* signout.png */,
+				7918D9B61E4451610004D87C /* close.png */,
 				7918D9A91E4404070004D87C /* home.png */,
+				7918D9B21E444CA00004D87C /* tweet_btn.png */,
 				7918D9A71E4404000004D87C /* profile.png */,
 				7918D9841E41BA5E0004D87C /* favorite.png */,
 				7918D9821E41BA220004D87C /* reply.png */,
@@ -169,6 +183,9 @@
 				7918D9A21E43F8BF0004D87C /* ProfilePageViewController.h */,
 				7918D9A31E43F8BF0004D87C /* ProfilePageViewController.m */,
 				7918D9A41E43F8BF0004D87C /* ProfilePageViewController.xib */,
+				7918D9AD1E4441910004D87C /* ComposeViewController.h */,
+				7918D9AE1E4441910004D87C /* ComposeViewController.m */,
+				7918D9AF1E4441910004D87C /* ComposeViewController.xib */,
 			);
 			path = myTwitter;
 			sourceTree = "<group>";
@@ -253,6 +270,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7918D9B71E4451610004D87C /* close.png in Resources */,
 				7918D9A81E4404000004D87C /* profile.png in Resources */,
 				7918D96C1E3FF95B0004D87C /* LoginViewController.xib in Resources */,
 				7918D9AA1E4404070004D87C /* home.png in Resources */,
@@ -260,6 +278,7 @@
 				7918D9511E3FB9160004D87C /* Assets.xcassets in Resources */,
 				7918D95F1E3FB9CA0004D87C /* TweetListViewController.xib in Resources */,
 				7918D9AC1E4440610004D87C /* compose.png in Resources */,
+				7918D9B91E4464B80004D87C /* signout.png in Resources */,
 				7918D9831E41BA220004D87C /* reply.png in Resources */,
 				7918D98F1E4261060004D87C /* DetailTweetViewController.xib in Resources */,
 				7918D9641E3FC8200004D87C /* TweetTableViewCell.xib in Resources */,
@@ -267,7 +286,9 @@
 				7918D9871E41BAD80004D87C /* retweet.png in Resources */,
 				7918D9961E428DB50004D87C /* TweetViewController.xib in Resources */,
 				7918D9851E41BA5E0004D87C /* favorite.png in Resources */,
+				7918D9B31E444CA10004D87C /* tweet_btn.png in Resources */,
 				7918D9A11E43EEEA0004D87C /* tabBar.png in Resources */,
+				7918D9B11E4441910004D87C /* ComposeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +357,7 @@
 				7918D9461E3FB9160004D87C /* main.m in Sources */,
 				7918D9731E4017B40004D87C /* Tweet.m in Sources */,
 				7918D9631E3FC8200004D87C /* TweetTableViewCell.m in Sources */,
+				7918D9B01E4441910004D87C /* ComposeViewController.m in Sources */,
 				7918D96F1E3FFA720004D87C /* TwitterClient.m in Sources */,
 				7918D96B1E3FF95B0004D87C /* LoginViewController.m in Sources */,
 			);

@@ -12,6 +12,7 @@
 #import "TwitterClient.h"
 #import "Tweet.h"
 #import "DetailTweetViewController.h"
+#import "ComposeViewController.h"
 
 @interface TweetListViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -28,13 +29,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     UIImage *homeImg = [UIImage imageNamed:@"compose.png"];
+    UIImage *signoutImg = [UIImage imageNamed:@"signout.png"];
+    
+    
     UIBarButtonItem *composeButton = [[UIBarButtonItem alloc] initWithTitle:@"Compose" style:UIBarButtonItemStylePlain target:self action:@selector(createTweet:)];
     [composeButton setImage:homeImg];
     
+    UIBarButtonItem *signOutButton = [[UIBarButtonItem alloc] initWithTitle:@"Sign out" style:UIBarButtonItemStylePlain target:self action:@selector(signOut:)];
+    [composeButton setImage:signoutImg];
+    
+    
     [self.navigationItem setRightBarButtonItem:composeButton];
+    [self.navigationItem setLeftBarButtonItem:signOutButton];
+    
     
     UINib *nib = [UINib nibWithNibName:@"TweetTableViewCell" bundle:nil];
-    
     [self.tableView registerNib:nib forCellReuseIdentifier:@"TweetTableViewCell"];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
@@ -74,9 +83,6 @@
     Tweet *tweetModel = self.tweets[indexPath.row];
     detailView.tweet = tweetModel;
     [self.navigationController pushViewController:detailView animated:YES];
-    
-   // UINavigationController *navController = (UINavigationController *)[UIApplication.sharedApplication.keyWindow rootViewController];
-    //[navController pushViewController:detailView animated:NO];
 }
 
 -(void) getLatestTweets {
@@ -98,9 +104,20 @@
     NSLog(@"Calling Create Tweet Method");
 }
 
+// Composing a tweet Action
 -(IBAction)createTweet:(UIBarButtonItem*)btn
 {
     NSLog(@"Composing tweet %@", btn.title);
+    ComposeViewController *composeViewController = [[ComposeViewController alloc] initWithNibName:@"ComposeViewController" bundle:nil];
+    [self.navigationController pushViewController:composeViewController animated:YES];
+    
+}
+
+// Signing out of App
+-(IBAction)signOut:(UIBarButtonItem*)btn
+{
+    NSLog(@"Signing out %@", btn.title);
+    [self.navigationController popViewControllerAnimated:YES];
     
 }
      

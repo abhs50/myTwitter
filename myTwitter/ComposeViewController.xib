@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ComposeViewController">
+            <connections>
+                <outlet property="closeView" destination="E0N-aB-nf1" id="bkb-am-4K7"/>
+                <outlet property="profileImageView" destination="Ac9-we-JQP" id="QFy-lu-is6"/>
+                <outlet property="tweetTextView" destination="n4q-L2-ACf" id="DUc-zo-7vg"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n4q-L2-ACf">
+                    <rect key="frame" x="0.0" y="146" width="375" height="60"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="cF3-bs-d6s"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1RY-LR-YJw">
+                    <rect key="frame" x="0.0" y="80" width="63" height="56"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ac9-we-JQP">
+                            <rect key="frame" x="8" y="0.0" width="53" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="aiX-Yb-UQW"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Ac9-we-JQP" firstAttribute="leading" secondItem="1RY-LR-YJw" secondAttribute="leading" constant="8" id="FWR-pM-Bjx"/>
+                        <constraint firstAttribute="bottom" secondItem="Ac9-we-JQP" secondAttribute="bottom" constant="12" id="HOf-OM-l3V"/>
+                        <constraint firstAttribute="trailing" secondItem="Ac9-we-JQP" secondAttribute="trailing" constant="2" id="leF-Bc-1td"/>
+                        <constraint firstItem="Ac9-we-JQP" firstAttribute="top" secondItem="1RY-LR-YJw" secondAttribute="top" id="rmb-aA-FzU"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wG3-hP-Iza" userLabel="Tweet">
+                    <rect key="frame" x="299" y="216" width="60" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="AxP-BX-RZD"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                    <state key="normal" title="Tweet">
+                        <color key="titleColor" red="0.25645254629999997" green="0.75541087959999997" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="postTweet:" destination="-1" eventType="touchUpInside" id="cWx-A2-1gs"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E0N-aB-nf1">
+                    <rect key="frame" x="345" y="80" width="30" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="Elz-3J-KEi"/>
+                        <constraint firstAttribute="height" constant="20" id="HZM-h1-dAl"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="close.png"/>
+                    <connections>
+                        <action selector="onButtonClose:" destination="-1" eventType="touchUpInside" id="kgp-V0-H6A"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="wG3-hP-Iza" firstAttribute="top" secondItem="n4q-L2-ACf" secondAttribute="bottom" constant="10" id="4BY-kW-ObT"/>
+                <constraint firstItem="n4q-L2-ACf" firstAttribute="top" secondItem="1RY-LR-YJw" secondAttribute="bottom" constant="10" id="BQz-Ct-Ka7"/>
+                <constraint firstItem="1RY-LR-YJw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="CFZ-DH-41C"/>
+                <constraint firstItem="1RY-LR-YJw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="LiB-go-67y"/>
+                <constraint firstAttribute="trailing" secondItem="1RY-LR-YJw" secondAttribute="trailing" constant="312" id="Om3-IL-reU"/>
+                <constraint firstAttribute="trailing" secondItem="E0N-aB-nf1" secondAttribute="trailing" id="YXu-6R-43p"/>
+                <constraint firstAttribute="trailing" secondItem="wG3-hP-Iza" secondAttribute="trailing" constant="16" id="aJh-zH-Pih"/>
+                <constraint firstItem="E0N-aB-nf1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="kIC-Cq-Im1"/>
+                <constraint firstItem="1RY-LR-YJw" firstAttribute="leading" secondItem="n4q-L2-ACf" secondAttribute="leading" id="p6n-Pc-4WD"/>
+                <constraint firstAttribute="trailing" secondItem="n4q-L2-ACf" secondAttribute="trailing" id="rOw-o6-DjS"/>
+            </constraints>
+            <point key="canvasLocation" x="34.5" y="53.5"/>
+        </view>
+        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CEr-LG-hka">
+            <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+            <nil key="textColor"/>
+            <nil key="highlightedColor"/>
+        </label>
+    </objects>
+    <resources>
+        <image name="close.png" width="16" height="16"/>
+    </resources>
+</document>
